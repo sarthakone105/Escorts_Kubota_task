@@ -60,9 +60,9 @@ def clear_grd(base_dir):
 
 if __name__ == "__main__":
     
-    basedir = "/home/satyukt/Desktop/tasker"
-    
+    basedir = "/home/satyukt/Sarthak/Escorts_Kubota_task"  #Please change base directory.
+    day = 60 #change days as per requirements.
     create_directories(base_dir=basedir)
-    download_data(days= 10,base_dir=basedir)
+    download_data(days=day, base_dir=basedir) 
     clear_grd(basedir)
     

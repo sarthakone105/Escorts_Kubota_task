@@ -181,15 +181,16 @@ def clear_bands(main_dir):
         print(f"Successfully removed: {file}")
     
 if __name__ == "__main__":
-    farm_polygon = '/home/satyukt/Desktop/tasker/shp/AOI.shp'
+    main_dir = '/home/satyukt/Sarthak/Escorts_Kubota_task'
+    farm_polygon = f'{main_dir}/shp/AOI.shp'
+    
     gdf = gpd.read_file(farm_polygon)
     geom = gdf.geometry.iloc[0]
     geojson_dict = geom.__geo_interface__
 
     tdate = "2024-09-30"
-    main_dir = '/home/satyukt/Desktop/tasker'
     CLOUD_COVER = '10'
-    DATE_RANGE_DAYS = 365
+    DATE_RANGE_DAYS = 365 # For last one year data.
     fetch_cogs(main_dir, tdate, farm_polygon, CLOUD_COVER, DATE_RANGE_DAYS)
     clear_bands(main_dir)
     
